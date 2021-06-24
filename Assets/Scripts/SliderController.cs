@@ -61,6 +61,7 @@ public class SliderController : MonoBehaviour
     {
         _slider.gameObject.SetActive(false);
         _button.gameObject.SetActive(false);
+        _label.enabled = false;
         _slider.onValueChanged.RemoveAllListeners();
 
         if (!_notched)
@@ -78,6 +79,7 @@ public class SliderController : MonoBehaviour
 
         _button.gameObject.SetActive(true);
         _slider.gameObject.SetActive(true);
+        _label.enabled = true;
         _slider.onValueChanged.AddListener(delegate { valueChangedEventListener(); });
 
         if (!_notched)
