@@ -18,7 +18,7 @@ public class PartController : MonoBehaviour
     {
         if (_anchored)
         {
-            SetToAnchor();
+            SetToAnchor(false);
         }
     }
 
@@ -29,7 +29,7 @@ public class PartController : MonoBehaviour
         {
             if (_closeAnchor != null && Vector3.Distance(_closeAnchor.transform.position, hit.point) < SnapDistance)
             {
-                SetToAnchor();
+                SetToAnchor(false);
             }
             else
             {
@@ -58,7 +58,7 @@ public class PartController : MonoBehaviour
 
         if (_closeAnchor)
         {
-            SetToAnchor();
+            SetToAnchor(true);
         }
         else
         {
@@ -67,13 +67,24 @@ public class PartController : MonoBehaviour
         }
     }
 
-    private void SetToAnchor()
+    private void SetToAnchor(bool deliberate)
     {
         if (_closeAnchor != null)
         {
             gameObject.transform.position = _closeAnchor.transform.position;
             _anchored = true;
+
+            if (deliberate)
+            {
+                GameManager.Instance.Slider.Activate(OnSliderValueChanged);
+            }
         }
+    }
+
+    public void OnSliderValueChanged()
+    {
+        var scale = 2 * GameManager.Instance.Slider.GetValue();
+        RootBone.SetScale(scale);
     }
 
     public void OnTriggerEnterOther(AnchorController anchorController)

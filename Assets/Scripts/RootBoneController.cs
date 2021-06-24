@@ -10,17 +10,23 @@ public class RootBoneController : MonoBehaviour
     private Transform _bodyReference;
     private HingeJoint _hingeJoint;
     private MeshFilter _mesh;
+    private MeshCollider _meshCollider;
 
     [SerializeField]
     private Mesh _rightArm;
     [SerializeField]
     private Mesh _leftArm;
 
+    private float _springStart;
+
     private void Awake()
     {
         _bodyReference = GameObject.FindGameObjectWithTag("Body").transform;
         _hingeJoint = GetComponent<HingeJoint>();
-        _mesh = GetComponentInChildren<MeshFilter>();
+        _mesh = GetComponent<MeshFilter>();
+        _meshCollider = GetComponent<MeshCollider>();
+
+        _springStart = _hingeJoint.spring.targetPosition;
     }
 
     private void FixedUpdate()
@@ -36,7 +42,7 @@ public class RootBoneController : MonoBehaviour
                 {
                     //apply right arm
                     _mesh.mesh = _leftArm;
-                    _mesh.transform.Rotate(new Vector3(0, 0, 45));
+                    _meshCollider.sharedMesh = _leftArm;
                 }
             }
         }
@@ -51,7 +57,7 @@ public class RootBoneController : MonoBehaviour
                 {
                     //apply left arm
                     _mesh.mesh = _rightArm;
-                    _mesh.transform.Rotate(new Vector3(0,0,-45));
+                    _meshCollider.sharedMesh = _rightArm;
                 }
             }
         }
@@ -80,5 +86,15 @@ public class RootBoneController : MonoBehaviour
     public void OnTriggerExitOther(AnchorController anchorController)
     {
         _part.OnTriggerExitOther(anchorController);
+    }
+
+    public void SetScale(float scale)
+    {
+        //var positiveNegative = Mathf.Clamp(-1, 1, _hingeJoint.spring.targetPosition);
+        //positiveNegative = Mathf.Ceil(positiveNegative);
+        //var currentPosition = Mathf.Abs(_hingeJoint.spring.targetPosition);
+        //_hingeJoint.spring = new JointSpring() { damper = _hingeJoint.spring.damper, spring = _hingeJoint.spring.spring, targetPosition = currentPosition * scale * positiveNegative };
+
+        transform.localScale = new Vector3(scale, scale, scale);
     }
 }

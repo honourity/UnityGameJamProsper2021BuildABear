@@ -8,6 +8,7 @@ TagManager:
   - Part
   - Body
   - Arm
+  - ScalingSlider
   layers:
   - Default
   - TransparentFX
