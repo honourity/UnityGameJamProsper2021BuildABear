@@ -65,6 +65,11 @@ public class PartController : MonoBehaviour
         {
             anchor.EnableAnchor();
         }
+
+        if (_anchored)
+        {
+            GameManager.Instance.Slider.Deactivate();
+        }
     }
 
     public void OnMouseUp()

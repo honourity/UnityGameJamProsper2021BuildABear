@@ -26,4 +26,9 @@ public class GameManager : MonoBehaviour
 
         AudioSource = GetComponent<AudioSource>();
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

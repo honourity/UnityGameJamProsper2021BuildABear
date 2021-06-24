@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1351287851150608892}
   - component: {fileID: 1351287851150608895}
-  - component: {fileID: 5829752308939661237}
+  - component: {fileID: 6500437889638055419}
   m_Layer: 7
   m_Name: HeadAnchor
   m_TagString: Untagged
@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d1c57e45b3174bb012b488902f5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &5829752308939661237
-SphereCollider:
+--- !u!136 &6500437889638055419
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -55,8 +55,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.25
+  m_Height: 1.21
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1351287852544260529
 GameObject:
@@ -201,7 +202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5257544601274942039}
   - component: {fileID: 1351287851552838889}
-  - component: {fileID: 4490092117423844405}
+  - component: {fileID: 1220261456}
   m_Layer: 7
   m_Name: RightArmAnchor
   m_TagString: Untagged
@@ -236,8 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d1c57e45b3174bb012b488902f5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &4490092117423844405
-SphereCollider:
+--- !u!136 &1220261456
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -246,8 +247,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.25
+  m_Height: 1.21
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5257544601649947047
 GameObject:
@@ -259,7 +261,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5257544601649947046}
   - component: {fileID: 1351287852076164923}
-  - component: {fileID: 5246598173701346370}
+  - component: {fileID: 1633785251}
   m_Layer: 7
   m_Name: LeftLegAnchor
   m_TagString: Untagged
@@ -294,8 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d1c57e45b3174bb012b488902f5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &5246598173701346370
-SphereCollider:
+--- !u!136 &1633785251
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -304,8 +306,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.25
+  m_Height: 1.21
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5257544603049877144
 GameObject:
@@ -317,7 +320,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5257544603049877159}
   - component: {fileID: 1351287852444294716}
-  - component: {fileID: 3260533661925934851}
+  - component: {fileID: 854649504}
   m_Layer: 7
   m_Name: LeftArmAnchor
   m_TagString: Untagged
@@ -352,8 +355,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d1c57e45b3174bb012b488902f5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &3260533661925934851
-SphereCollider:
+--- !u!136 &854649504
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -362,8 +365,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.25
+  m_Height: 1.21
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5257544603140545722
 GameObject:
@@ -375,7 +379,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5257544603140545721}
   - component: {fileID: 1351287851209943443}
-  - component: {fileID: 208456528192703207}
+  - component: {fileID: 965306558}
   m_Layer: 7
   m_Name: RightLegAnchor
   m_TagString: Untagged
@@ -410,8 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d1c57e45b3174bb012b488902f5a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!135 &208456528192703207
-SphereCollider:
+--- !u!136 &965306558
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -420,8 +424,9 @@ SphereCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 2
   m_Radius: 0.25
+  m_Height: 1.21
+  m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &904420998837576015
 PrefabInstance:
