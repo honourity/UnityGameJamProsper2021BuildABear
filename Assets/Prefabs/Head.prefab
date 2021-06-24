@@ -52,6 +52,11 @@ MonoBehaviour:
   RootBone: {fileID: 7285058183968799768}
   _attachSound: {fileID: 8300000, guid: daada3671225f9d468237809dcc0a7db, type: 3}
   _detachSound: {fileID: 8300000, guid: 269060b2ff575f944a77f84f19d0819e, type: 3}
+  _notchedMeshes:
+  - {fileID: -7070831255929112694, guid: d058fb135de74604985f72184888f3c7, type: 3}
+  - {fileID: -8080488795305184486, guid: 6a0b16e718bd5404d9c221cd98fefda6, type: 3}
+  - {fileID: 1002348547627855708, guid: 4927884d599334a49a16a468e7432888, type: 3}
+  - {fileID: 8612883769010299105, guid: 4303caa74fbd57a48ab47cb6ab4d34cf, type: 3}
 --- !u!54 &-1120201712828226766
 Rigidbody:
   m_ObjectHideFlags: 0

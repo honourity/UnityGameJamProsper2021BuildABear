@@ -14,10 +14,17 @@ public class PartController : MonoBehaviour
     private AnchorController _closeAnchor;
     private bool _anchored;
 
+    private bool _notched;
+
+    [SerializeField]
+    private Mesh[] _notchedMeshes;
+
     private void Awake()
     {
         RootBone.transform.parent = null;
         GameManager.Instance.Slider.Deactivate();
+
+        _notched = RootBone.CompareTag("Head");
     }
 
     private void Update()
@@ -93,6 +100,7 @@ public class PartController : MonoBehaviour
 
             if (deliberate)
             {
+                GameManager.Instance.Slider.SetNotched(_notched, _notchedMeshes?.Length);
                 GameManager.Instance.Slider.Activate(OnSliderValueChanged);
             }
 
@@ -102,8 +110,15 @@ public class PartController : MonoBehaviour
 
     public void OnSliderValueChanged()
     {
-        var scale = 2 * GameManager.Instance.Slider.GetValue();
-        RootBone.SetScale(scale);
+        if (_notched)
+        {
+            RootBone.SetMesh(_notchedMeshes[Mathf.RoundToInt(GameManager.Instance.Slider.GetValue())]);
+        }
+        else
+        {
+            var scale = 2 * GameManager.Instance.Slider.GetValue();
+            RootBone.SetScale(scale);
+        }
     }
 
     public void OnTriggerEnterOther(AnchorController anchorController)

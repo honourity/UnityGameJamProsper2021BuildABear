@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class RootBoneController : MonoBehaviour
@@ -87,5 +88,11 @@ public class RootBoneController : MonoBehaviour
     public void SetScale(float scale)
     {
         transform.localScale = new Vector3(scale, scale, scale);
+    }
+
+    public void SetMesh(Mesh mesh)
+    {
+        _mesh.mesh = mesh;
+        _meshCollider.sharedMesh = mesh;
     }
 }
