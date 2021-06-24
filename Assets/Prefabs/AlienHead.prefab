@@ -133,8 +133,8 @@ HingeJoint:
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 30
-    damper: 0.1
+    spring: 100
+    damper: 0.01
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
