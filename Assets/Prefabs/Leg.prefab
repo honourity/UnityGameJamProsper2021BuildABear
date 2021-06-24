@@ -50,6 +50,8 @@ MonoBehaviour:
     m_Bits: 64
   SnapDistance: 0.5
   RootBone: {fileID: 7285058183968799768}
+  _attachSound: {fileID: 8300000, guid: daada3671225f9d468237809dcc0a7db, type: 3}
+  _detachSound: {fileID: 8300000, guid: 269060b2ff575f944a77f84f19d0819e, type: 3}
 --- !u!54 &-1120201712828226766
 Rigidbody:
   m_ObjectHideFlags: 0

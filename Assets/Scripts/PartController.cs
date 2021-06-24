@@ -6,6 +6,11 @@ public class PartController : MonoBehaviour
     public float SnapDistance;
     public RootBoneController RootBone;
 
+    [SerializeField]
+    private AudioClip _attachSound;
+    [SerializeField]
+    private AudioClip _detachSound;
+
     private AnchorController _closeAnchor;
     private bool _anchored;
 
@@ -34,6 +39,12 @@ public class PartController : MonoBehaviour
             }
             else
             {
+                if (_anchored)
+                {
+                    PlayDetachEffect();
+                    GameManager.Instance.Slider.Deactivate();
+                }
+
                 _anchored = false;
                 gameObject.transform.position = hit.point;
             }
@@ -74,12 +85,18 @@ public class PartController : MonoBehaviour
         if (_closeAnchor != null)
         {
             gameObject.transform.position = _closeAnchor.transform.position;
-            _anchored = true;
+
+            if (!_anchored)
+            {
+                PlayAttachEffect();
+            }
 
             if (deliberate)
             {
                 GameManager.Instance.Slider.Activate(OnSliderValueChanged);
             }
+
+            _anchored = true;
         }
     }
 
@@ -103,5 +120,15 @@ public class PartController : MonoBehaviour
         {
             _closeAnchor = null;
         }
+    }
+
+    private void PlayAttachEffect()
+    {
+        GameManager.Instance.AudioSource.PlayOneShot(_attachSound);
+    }
+
+    private void PlayDetachEffect()
+    {
+        GameManager.Instance.AudioSource.PlayOneShot(_detachSound);
     }
 }

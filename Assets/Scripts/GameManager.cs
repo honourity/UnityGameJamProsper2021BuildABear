@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -15,6 +14,8 @@ public class GameManager : MonoBehaviour
 
     public SliderController Slider { get; set; }
 
+    public AudioSource AudioSource { get; set; }
+
     private void Awake()
     {
         Anchors = FindObjectsOfType<AnchorController>();
@@ -22,5 +23,7 @@ public class GameManager : MonoBehaviour
         Camera.main.eventMask = MouseClickLayerMask;
 
         Slider = FindObjectOfType<SliderController>();
+
+        AudioSource = GetComponent<AudioSource>();
     }
 }
