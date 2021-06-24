@@ -54,6 +54,7 @@ MonoBehaviour:
   _detachSound: {fileID: 8300000, guid: 269060b2ff575f944a77f84f19d0819e, type: 3}
   _notchedMeshes:
   - {fileID: 2132684344841315456, guid: 33831737de336794dbb414958c18da17, type: 3}
+  - {fileID: -1796322710368405647, guid: 051c86f7a350cde47a9b7a30a6db2aab, type: 3}
 --- !u!54 &-1120201712828226766
 Rigidbody:
   m_ObjectHideFlags: 0
