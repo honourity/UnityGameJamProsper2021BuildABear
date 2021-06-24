@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour
 
     public LayerMask MouseClickLayerMask;
 
-    public Collider[] AnchorTriggers { get; set; }
+    public AnchorController[] Anchors { get; set; }
 
     public SliderController Slider { get; set; }
 
     private void Awake()
     {
-        AnchorTriggers = FindObjectsOfType<AnchorController>().Select(a => a.GetComponent<Collider>()).ToArray();
+        Anchors = FindObjectsOfType<AnchorController>();
 
         Camera.main.eventMask = MouseClickLayerMask;
 

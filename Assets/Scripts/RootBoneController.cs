@@ -17,28 +17,24 @@ public class RootBoneController : MonoBehaviour
     [SerializeField]
     private Mesh _leftArm;
 
-    private float _springStart;
-
     private void Awake()
     {
         _bodyReference = GameObject.FindGameObjectWithTag("Body").transform;
         _hingeJoint = GetComponent<HingeJoint>();
         _mesh = GetComponent<MeshFilter>();
         _meshCollider = GetComponent<MeshCollider>();
-
-        _springStart = _hingeJoint.spring.targetPosition;
     }
 
     private void FixedUpdate()
     {
-        if (transform.position.x > _bodyReference.position.x)
+        if (transform.position.x > _bodyReference.position.x && _mesh.gameObject.tag != "Head")
         {
             if (_springPopAngleFlipped)
             {
                 _hingeJoint.spring = new JointSpring() { damper = _hingeJoint.spring.damper, spring = _hingeJoint.spring.spring, targetPosition = _hingeJoint.spring.targetPosition * -1 };
                 _springPopAngleFlipped = false;
 
-                if (_mesh.gameObject.tag == "Arm")
+                if (_mesh.gameObject.tag == "Arm" || _mesh.gameObject.tag == "Leg")
                 {
                     //apply right arm
                     _mesh.mesh = _leftArm;
@@ -46,14 +42,14 @@ public class RootBoneController : MonoBehaviour
                 }
             }
         }
-        else
+        else if (_mesh.gameObject.tag != "Head")
         {
             if (!_springPopAngleFlipped)
             {
                 _hingeJoint.spring = new JointSpring() { damper = _hingeJoint.spring.damper, spring = _hingeJoint.spring.spring, targetPosition = _hingeJoint.spring.targetPosition * -1 };
                 _springPopAngleFlipped = true;
 
-                if (_mesh.gameObject.tag == "Arm")
+                if (_mesh.gameObject.tag == "Arm" || _mesh.gameObject.tag == "Leg")
                 {
                     //apply left arm
                     _mesh.mesh = _rightArm;
@@ -90,11 +86,6 @@ public class RootBoneController : MonoBehaviour
 
     public void SetScale(float scale)
     {
-        //var positiveNegative = Mathf.Clamp(-1, 1, _hingeJoint.spring.targetPosition);
-        //positiveNegative = Mathf.Ceil(positiveNegative);
-        //var currentPosition = Mathf.Abs(_hingeJoint.spring.targetPosition);
-        //_hingeJoint.spring = new JointSpring() { damper = _hingeJoint.spring.damper, spring = _hingeJoint.spring.spring, targetPosition = currentPosition * scale * positiveNegative };
-
         transform.localScale = new Vector3(scale, scale, scale);
     }
 }

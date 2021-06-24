@@ -12,6 +12,7 @@ public class PartController : MonoBehaviour
     private void Awake()
     {
         RootBone.transform.parent = null;
+        GameManager.Instance.Slider.Deactivate();
     }
 
     private void Update()
@@ -42,18 +43,18 @@ public class PartController : MonoBehaviour
     public void OnMouseDown()
     {
         //enable all anchor triggers
-        foreach (var collider in GameManager.Instance.AnchorTriggers)
+        foreach (var anchor in GameManager.Instance.Anchors)
         {
-            collider.enabled = true;
+            anchor.EnableAnchor();
         }
     }
 
     public void OnMouseUp()
     {
         //disable all anchor triggers
-        foreach (var collider in GameManager.Instance.AnchorTriggers)
+        foreach (var anchor in GameManager.Instance.Anchors)
         {
-            collider.enabled = false;
+            anchor.DisableAnchor();
         }
 
         if (_closeAnchor)
@@ -62,6 +63,7 @@ public class PartController : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.Slider.Deactivate();
             Destroy(RootBone.gameObject);
             Destroy(gameObject);
         }

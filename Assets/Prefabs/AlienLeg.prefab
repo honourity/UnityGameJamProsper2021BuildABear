@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8095183534967010121}
   - component: {fileID: -1120201712828226766}
   m_Layer: 0
-  m_Name: Arm
+  m_Name: AlienLeg
   m_TagString: Part
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -83,7 +83,7 @@ GameObject:
   - component: {fileID: 8652715125647686416}
   m_Layer: 8
   m_Name: RootBone
-  m_TagString: Arm
+  m_TagString: Leg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,13 +95,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5253864865551028745}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4729602122828138480}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!54 &943950215
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -167,8 +167,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _part: {fileID: 8095183534967010121}
-  _rightArm: {fileID: 7552302399112012151, guid: 692d46faf28f02f4d9165e20a593a17e, type: 3}
-  _leftArm: {fileID: -4189194088932567168, guid: 0c68e257a215ff943abac09b56103387, type: 3}
+  _rightArm: {fileID: -4174592060046504206, guid: 93783500556c1b744905d50c7a218842, type: 3}
+  _leftArm: {fileID: 220382274677548505, guid: 126f29262f27615458ec68f7b8f32fd7, type: 3}
 --- !u!64 &4659710803048791914
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -182,7 +182,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 7552302399112012151, guid: 692d46faf28f02f4d9165e20a593a17e, type: 3}
+  m_Mesh: {fileID: -4174592060046504206, guid: 93783500556c1b744905d50c7a218842, type: 3}
 --- !u!33 &4151397307817234959
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5253864865551028745}
-  m_Mesh: {fileID: 7552302399112012151, guid: 692d46faf28f02f4d9165e20a593a17e, type: 3}
+  m_Mesh: {fileID: -4174592060046504206, guid: 93783500556c1b744905d50c7a218842, type: 3}
 --- !u!23 &8652715125647686416
 MeshRenderer:
   m_ObjectHideFlags: 0

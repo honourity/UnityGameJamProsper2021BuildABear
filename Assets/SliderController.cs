@@ -28,6 +28,10 @@ public class SliderController : MonoBehaviour
 
     public void Activate(UnityAction valueChangedEventListener)
     {
+        _slider.onValueChanged.RemoveAllListeners();
+
+        _slider.value = 0.5f;
+
         _button.gameObject.SetActive(true);
         _slider.gameObject.SetActive(true);
         _slider.onValueChanged.AddListener(delegate { valueChangedEventListener(); });
