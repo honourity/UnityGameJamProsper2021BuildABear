@@ -28,14 +28,14 @@ public class RootBoneController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (transform.position.x > _bodyReference.position.x && _mesh.gameObject.tag != "Head")
+        if (transform.position.x > _bodyReference.position.x && !_mesh.gameObject.CompareTag("Head"))
         {
             if (_springPopAngleFlipped)
             {
                 _hingeJoint.spring = new JointSpring() { damper = _hingeJoint.spring.damper, spring = _hingeJoint.spring.spring, targetPosition = _hingeJoint.spring.targetPosition * -1 };
                 _springPopAngleFlipped = false;
 
-                if (_mesh.gameObject.tag == "Arm" || _mesh.gameObject.tag == "Leg")
+                if (_mesh.gameObject.CompareTag("Arm") || _mesh.gameObject.CompareTag("Leg"))
                 {
                     //apply right arm
                     _mesh.mesh = _leftArm;
@@ -43,14 +43,14 @@ public class RootBoneController : MonoBehaviour
                 }
             }
         }
-        else if (_mesh.gameObject.tag != "Head")
+        else if (!_mesh.gameObject.CompareTag("Head"))
         {
             if (!_springPopAngleFlipped)
             {
                 _hingeJoint.spring = new JointSpring() { damper = _hingeJoint.spring.damper, spring = _hingeJoint.spring.spring, targetPosition = _hingeJoint.spring.targetPosition * -1 };
                 _springPopAngleFlipped = true;
 
-                if (_mesh.gameObject.tag == "Arm" || _mesh.gameObject.tag == "Leg")
+                if (_mesh.gameObject.CompareTag("Arm") || _mesh.gameObject.CompareTag("Leg"))
                 {
                     //apply left arm
                     _mesh.mesh = _rightArm;

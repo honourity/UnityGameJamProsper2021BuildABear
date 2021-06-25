@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8095183534967010121}
   - component: {fileID: -1120201712828226766}
   m_Layer: 0
-  m_Name: AlienArm
+  m_Name: BearArm
   m_TagString: Part
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _part: {fileID: 8095183534967010121}
-  _rightArm: {fileID: 3373715246609816073, guid: 9d6c4b17254097946a07caa9def0e379, type: 3}
-  _leftArm: {fileID: 2936142808628226032, guid: de4b073a7cf10d94db0aaa89acf26714, type: 3}
+  _rightArm: {fileID: 1886497471008245660, guid: 50803be3fe225be428d0414dc6c37431, type: 3}
+  _leftArm: {fileID: -7294138284423429754, guid: a160422e27cfc7b428f8a1405bad5201, type: 3}
 --- !u!64 &4659710803048791914
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -185,7 +185,7 @@ MeshCollider:
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 2936142808628226032, guid: de4b073a7cf10d94db0aaa89acf26714, type: 3}
+  m_Mesh: {fileID: -7294138284423429754, guid: a160422e27cfc7b428f8a1405bad5201, type: 3}
 --- !u!33 &4151397307817234959
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5253864865551028745}
-  m_Mesh: {fileID: 2936142808628226032, guid: de4b073a7cf10d94db0aaa89acf26714, type: 3}
+  m_Mesh: {fileID: -7294138284423429754, guid: a160422e27cfc7b428f8a1405bad5201, type: 3}
 --- !u!23 &8652715125647686416
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -214,7 +214,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 97fafa7331d4f2d499619d66539fbf85, type: 2}
+  - {fileID: 2100000, guid: 0a9aa3d1dee88f74d914e1a52d897530, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
